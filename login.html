@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>About Me</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script>
+          function store() {
+            var givenrollno = document.getElementById("rollno").value;
+            localStorage.setItem("rollno", givenrollno);
+
+            var givencourse = document.getElementById("course").value;
+            localStorage.setItem("course", givencourse);
+          }
+        </script>
+        <link rel="stylesheet" href="styles.css"> 
+    </head>
+    <body>
+
+        <!-- <div class="container-fluid" style="background-color: cornflowerblue;">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-sm-6">
+              <h1 class="indent">QUIZ</h1>
+            </div>
+            <div class="col-sm-6">
+                <h1 class="indent">Login</h1>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="card mb-3">
+         
+          <div class="card-body text-center" style="background-color: #10c495;">
+              <h1 class="card-title">Login</h1>
+          </div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="container">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">
+                <form action="Quiz2.html" onsubmit="store()">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationDefault01">Roll No.</label>
+                      <input type="text" class="form-control" id="rollno" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationDefault03">Course</label>
+                      <input type="text" class="form-control" id="course" required>
+                    </div>
+                  </div>
+                  <!-- <button class="btn btn-primary" type="button" onclick="store()">Submit</button> -->
+                  <input type="submit" value="Submit">
+                  <!-- <a class="btn btn-primary" href="Quiz1.html" role="button">Next</a> -->
+                </form>
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>
