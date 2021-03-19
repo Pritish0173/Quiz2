@@ -1,5 +1,16 @@
 body {
 	font-family: 'Lato', sans-serif;
+	background-image: url("https://i.pinimg.com/originals/59/e7/58/59e758cd94b6a989aa2cc7b4eeb68098.jpg");
+	
+}
+
+#heading{
+	font-size: 400%;
+	font-weight: bold;
+	background-color: teal;
+	text-indent: 45%;
+	color: white;
+	padding: 5% 5% 5% 5%;
 }
 
 

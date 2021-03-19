@@ -1,13 +1,11 @@
 function data(qno)
 {
-	var radios = document.getElementsByName(qno); // list of radio buttons
-	// var val = localStorage.getItem('q1'); // local storage value
+	var radios = document.getElementsByName(qno);
 
 	for(var i=0;i<radios.length;i++){
-		// var opt=radios[i].value;
-		// console.log(opt)
+
 		if(radios[i].checked){
-			// console.log(radios[i].value)
+
 			return radios[i].value
 		}
 	}
@@ -15,9 +13,6 @@ function data(qno)
 
 function check(){
 
-	// var question1 = document.quiz.question1.value;
-	// var question2 = document.quiz.question2.value;
-	// var question3 = document.quiz.question3.value;
 	var correct = 0;
 
 	var length = parseInt(localStorage.getItem("responselength"));
@@ -37,45 +32,13 @@ function check(){
 		
 	}
 
-	// var givenans=data()
-	// localStorage.setItem("givenans1",givenans)
-	// if(ans==givenans){
-	// 	correct++;
-	// }
-	
-
-
-	// if (question1 == "Providence") {
-	// 	correct++;
-	// }
-	// if (question2 == "Hartford") {
-	// 	correct++;
-	// }	
-	// if (question3 == "Albany") {
-	// 	correct++;
-	// }
-	
-	// var pictures = ["img/win.gif", "img/meh.jpeg", "img/lose.gif"];
-	// var messages = ["Great job!", "That's just okay", "You really need to do better"];
-	// var score;
-
-	// if (correct == 0) {
-	// 	score = 2;
-	// }
-
-	// if (correct > 0 && correct < 3) {
-	// 	score = 1;
-	// }
-
-	// if (correct == 3) {
-	// 	score = 0;
-	// }
 
 	document.getElementById("after_submit").style.visibility = "visible";
+	document.getElementById("button").style.visibility = "hidden";
 
 	document.getElementById("message").innerHTML = "Roll No: " + localStorage.getItem("rollno");
 	document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
-	// document.getElementById("picture").src = pictures[score];
+
 }
 
 
@@ -114,6 +77,8 @@ function loadDoc() {
 
 			document.getElementById("question").style.visibility = "hidden";
 
+			countdown()
+
 		} 
 		else {
 			console.log("Error in response")
@@ -134,4 +99,19 @@ function store() {
 	form.style.display = 'none';
 
 	document.getElementById("question").style.visibility = "visible";
+}
+
+function countdown(){
+	var count = 20;
+	var interval = setInterval(function(){
+		document.getElementById('count').innerHTML= "Time Left: " + count;
+		count--;
+		if (count === 0){
+			check()
+			clearInterval(interval);
+			document.getElementById('count').innerHTML='Done';
+			// or...
+			alert("You're out of time!");
+		}
+	}, 1000);
 }

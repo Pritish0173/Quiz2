@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Quiz</title>
+        <link href ="style.css" rel ="stylesheet">
+        <script src = "main.js"></script>
+
+    </head>
+
+
+    <body>
+        <div id="heading">Quiz</div>
+
+        <div id="count" style="font-size: 150%;font-weight: bold;background-color: teal;text-indent: 2%;color: white;">Start</div>
+        <br>
+        <br>
+
+
+        <form id="login" >
+
+            <label>Roll No:</label><br>
+            <input type="text" id="rollno" name="rollno"><br><br>
+            <label>Course:</label><br>
+            <input type="text" id="course" name="course"><br><br>
+            <input id = "loginsubmit" type = "button" value = "Submit" onclick = "store();">
+
+        </form>
+
+        <form id = "quiz" name = "quiz">
+
+        </form>
+
+        <input id = "question" type = "button" value = "Start Quiz" onclick = "loadDoc();">
+
+        <div id = "after_submit">
+
+            <p id = "message"></p>
+            <p id = "number_correct"></p>
+
+        </div>
+
+
+    </body>
+</html>
+
+
+
