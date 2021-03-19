@@ -25,7 +25,7 @@ function check(){
 		var ans = localStorage.getItem(answerno);
 				
 		var givenans=data(questionno);
-		localStorage.setItem("givenans1",givenans)
+		localStorage.setItem("givenans"+i,givenans)
 		if(ans==givenans){
 			correct++;
 		}
@@ -33,11 +33,31 @@ function check(){
 	}
 
 
+
+
 	document.getElementById("after_submit").style.visibility = "visible";
 	document.getElementById("button").style.visibility = "hidden";
 
-	document.getElementById("message").innerHTML = "Roll No: " + localStorage.getItem("rollno");
+	document.getElementById("roll").innerHTML = "Roll No: " + localStorage.getItem("rollno");
+	document.getElementById("maincourse").innerHTML = "Course: " + localStorage.getItem("course");
 	document.getElementById("number_correct").innerHTML = "You got " + correct + " correct.";
+
+	var tablestr = "<tr><th>Question No.</th><th>Given Answer</th><th>Correct Answer</th></tr>";  
+
+	for(i=0;i<length;i++){
+
+		var serialno = i + 1 + "";
+
+		tablestr += "<tr>"+
+						"<td>" + serialno + "</td>" +
+						"<td>" + localStorage.getItem("givenans" + i) + "</td>" + 
+						"<td>" +  localStorage.getItem("answer" + i) + "</td>" +	
+					"</tr>";			
+		
+	}
+
+	tablestr += "</table>";
+	document.getElementById("t1").innerHTML = tablestr;
 
 }
 

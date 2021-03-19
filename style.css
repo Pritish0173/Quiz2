@@ -104,11 +104,11 @@ body {
 	visibility: hidden;
 	background: #ff5459;
 	padding: 10px 20px 10px 20px;
-	width: 40%;
+	width: 45%;
 	border-radius: 20px;
 	float: right;
 	margin-left: 20px;
-	font-size: 30px;
+	font-size: 150%;
 
 
 }
@@ -123,3 +123,23 @@ body {
 #mc {
 	display: inline;
 } 
+
+table {
+	width:100%;
+  }
+  table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+  }
+  th, td {
+	padding: 1%;
+	text-align: left;
+  }
+  
+  tr {
+   background-color: #fff;
+  }
+  th {
+	background-color: black;
+	color: white;
+}
