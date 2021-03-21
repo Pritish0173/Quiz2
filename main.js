@@ -1,3 +1,5 @@
+var count = 20;
+
 function data(qno)
 {
 	var radios = document.getElementsByName(qno);
@@ -12,6 +14,8 @@ function data(qno)
 }
 
 function check(){
+
+	Slider.Stop();
 
 	var correct = 0;
 
@@ -97,7 +101,7 @@ function loadDoc() {
 
 			document.getElementById("question").style.visibility = "hidden";
 
-			countdown()
+			Slider.Start();
 
 		} 
 		else {
@@ -121,17 +125,24 @@ function store() {
 	document.getElementById("question").style.visibility = "visible";
 }
 
-function countdown(){
-	var count = 20;
-	var interval = setInterval(function(){
-		document.getElementById('count').innerHTML= "Time Left: " + count;
-		count--;
-		if (count === 0){
-			check()
-			clearInterval(interval);
-			document.getElementById('count').innerHTML='Done';
-			// or...
-			alert("You're out of time!");
-		}
-	}, 1000);
-}
+
+var Slider= {
+    slider: null,
+    Start: function() {
+        this.slider = setInterval(function() {
+			document.getElementById('count').innerHTML= "Time Left: " + count;
+			count--;
+			if (count === 0){
+				check()
+				clearInterval(this.slider);
+				document.getElementById('count').innerHTML='Done';
+				// or...
+				alert("You're out of time!");
+			}
+        }, 1000);
+    },
+    Stop: function() {
+        window.clearTimeout(this.slider);
+		document.getElementById('count').innerHTML='Done';
+    }
+};
